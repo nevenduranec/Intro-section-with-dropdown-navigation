@@ -20,11 +20,9 @@
     <script defer src="script.js"></script>
   </head>
   <body>
-    <head class="head">
       <header class="header">
         <div class="header__inner">
           <img class="header__logo" src="./images/logo.svg" alt="logo image" />
-          <div class="navigation__container"></div>
           <button class="header__hamburger">
             <svg
               class="hamburger__icon"
@@ -57,10 +55,10 @@
                         />
                       </g>
                     </svg>
-                  </button>
+                  </button> 
                 </div>
-                <div class="dropdown__wrapper">
-                  <button class="navigation__dropdown-feature">
+                <div class="dropdown__wrapper dropdown__wrapper-feature">
+                  <button class="navigation__dropdown-feature"  aria-expanded="false" aria-controls="dropdown-feature">
                     <span class="dropdown__text">Features</span>
                     <svg
                       class="arrow-down-feature"
@@ -75,21 +73,8 @@
                         d="m1 1 4 4 4-4"
                       />
                     </svg>
-                    <svg
-                      class="arrow-up-feature"
-                      width="10"
-                      height="6"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        stroke="#686868"
-                        stroke-width="1.5"
-                        fill="none"
-                        d="m1 5 4-4 4 4"
-                      />
-                    </svg>
                   </button>
-                  <div class="dropdown-feature">
+                  <div class="dropdown-feature" id="dropdown-feature">
                     <div class="dropdown__container-link">
                       <svg
                         width="14"
@@ -144,8 +129,8 @@
                     </div>
                   </div>
                 </div>
-                <div class="dropdown__wrapper">
-                  <button class="navigation__dropdown-company">
+                <div class="dropdown__wrapper dropdown__wrapper-company">
+                  <button class="navigation__dropdown-company"  aria-expanded="false" aria-controls="dropdown-company">
                     <span class="dropdown__text">Company</span>
                     <svg
                       class="arrow-down-company"
@@ -160,21 +145,8 @@
                         d="m1 1 4 4 4-4"
                       />
                     </svg>
-                    <svg
-                      class="arrow-up-company"
-                      width="10"
-                      height="6"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        stroke="#686868"
-                        stroke-width="1.5"
-                        fill="none"
-                        d="m1 5 4-4 4 4"
-                      />
-                    </svg>
                   </button>
-                  <div class="dropdown-company">
+                  <div class="dropdown-company" id="dropdown-company">
                     <a class="navigation__link" href="#">History</a>
                     <a class="navigation__link" href="#">Our Team</a>
                     <a class="navigation__link" href="#">Blog</a>
@@ -196,16 +168,15 @@
       <section class="landing">
         <div class="landing__inner">
           <figure class="landing__figure">
-            <img
-              class="landing__image-mobile"
-              src="./images/image-hero-mobile.png"
-              alt="landing image"
-            />
-            <img
-              class="landing__image-desktop"
-              src="./images/image-hero-desktop.png"
-              alt="landing image"
-            />
+            <picture> 
+              <source media="(max-width: 767px)" srcset="./images/image-hero-mobile.png">
+               <source media="(min-width: 768px)" srcset="./images/image-hero-desktop.png">
+               <img
+                 class="landing__image"
+                 src="./images/image-hero-mobile.png"
+                 alt="landing image"
+               />
+            </picture>
           </figure>
           <div class="landing__content">
             <h1 class="landing__title">Make remote work</h1>
